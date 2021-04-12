@@ -33,29 +33,35 @@ $dataHj = date('Y-m-d H:i:s');
       <div class="row">
         <div class="col-md-12">
           <div class="table-responsive">
-          <form>
+          <?php 
+            if(isset($_SESSION['msg']) != '' && $_SESSION['msg']){
+                echo $_SESSION['msg'];
+                unset($_SESSION['msg']);
+            }
+          ?>
+          <form method="post" action="funcoes/agendamento.php?funcao=cadastrar">
             <div class="form-group">
                 <label for="exampleFormControlInput1">Descrição</label>
-                <input type="text" class="form-control" required id="exampleFormControlInput1" placeholder="Sábado 15:30min às 16:30min">
+                <input type="text" name="descricao" class="form-control" required id="exampleFormControlInput1" placeholder="Sábado 15:30min às 16:30min">
             </div>
             <div class="form-row">
                 <div class="col">
                 <label for="exampleFormControlInput1">Data início</label>
-                <input type="datetime-local" required class="form-control">
+                <input name="data_inicio" type="datetime-local" required class="form-control">
                 </div>
                 <div class="col">
                 <label for="exampleFormControlInput1">Data final</label>
-                <input type="datetime-local" required class="form-control">
+                <input type="datetime-local" name="data_fim" required class="form-control">
                 </div>
             </div>
             <div class="form-row  mt-2">
                 <div class="col">
                 <label for="exampleFormControlInput1">Link</label>
-                <input type="text" required class="form-control">
+                <input type="text" name="link" required class="form-control">
                 </div>
                 <div class="col-2">
-                <label for="exampleFormControlInput1">Qtd vagas</label>
-                <input type="number" required class="form-control">
+                <label for="exampleFormControlInput1">Qtd alunos</label>
+                <input type="number" name="qtd_alunos" required class="form-control">
                 </div>
             </div>
             <button type="submit" class="btn btn-primary mt-3 mb-3">Cadastrar</button>

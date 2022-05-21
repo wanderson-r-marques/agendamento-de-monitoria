@@ -1,6 +1,6 @@
 # Agendamento de monitoria
 > **Sistema desenvolvido para aprendizado na graduação** <br>
-O sistema realiza agendamento para monitoria de alunos com verificação e bloqueio de datas disponíveis.
+O sistema realiza agendamento para monitoria de alunos. Perrmite verificação e bloqueio de datas disponíveis.
 
 ## Visualização
 
